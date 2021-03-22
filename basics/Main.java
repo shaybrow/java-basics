@@ -2,11 +2,12 @@ public class Main{
 
 
 public static void main (String[] args) {
-   int [] j = new int[]{1,2,3,4,5};
-System.out.println(pluralize("cat", 4));
-System.out.println(pluralize("dog", 0));
-System.out.println(pluralize("friend", 1));
-
+int none = 0;
+int some = 5;
+int one = 1;
+System.out.println("I have " + none + " " + pluralize("cat", none));
+System.out.println("I have " + some + " " + pluralize("food", some));
+System.out.println("I have " + one + " " + pluralize("bed", one));
 }
 public static String pluralize (String word, float count){
 
