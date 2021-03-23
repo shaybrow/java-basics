@@ -1,5 +1,8 @@
 import java.util.*;
-
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Timer;
+import java.util.TimerTask;
 public class Main{
 
 
@@ -11,9 +14,27 @@ System.out.println("I have " + none + " " + pluralize("cat", none));
 System.out.println("I have " + some + " " + pluralize("food", some));
 System.out.println("I have " + one + " " + pluralize("bed", one));
 System.out.println(flipNHeads(2));
+clock();
 }
-public static String pluralize (String word, float count){
+//https://stackoverflow.com/questions/24894501/java-timer-every-x-seconds/24895050
+public static void clock (){
+//   int together = 2 + 2;
+//  int forever = 5;
+//   while(together < forever){
+  Timer timeThing = new Timer( );
+  timeThing.scheduleAtFixedRate(new TimerTask(){
+      
+      public void run() {
+   LocalDateTime now = LocalDateTime.now();
+String time = now.format(DateTimeFormatter.ofPattern("HH:mm:ss"));
+System.out.println(time);
+      }
+ 
+  }, 1000, 1000);
 
+}
+
+public static String pluralize (String word, float count){
 if (count <= 1 && count != 0){
   // System.out.println(word);
   return word;
