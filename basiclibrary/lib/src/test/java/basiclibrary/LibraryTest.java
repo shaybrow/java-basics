@@ -5,12 +5,54 @@ package basiclibrary;
 
 import org.junit.Test;
 
+import java.util.HashMap;
+
 import static org.junit.Assert.*;
 
 public class LibraryTest {
-   @Test public void testRoll (){
-
+   @Test public void testRollLength (){
+      int n = 20;
+      int [] rolls = Library.roll(n);
+      int expectLength = m;
+      int trueLength = rolls.length;
+      assertEquals(expectLength, trueLength);
+      n = 15;
+      rolls = Library.roll(n);
+      expectLength = m;
+      trueLength = rolls.length;
+      assertEquals(expectLength, trueLength);
    }
+   @Test public void testRollConsistent(){
+      int [] output = Library.roll(10000);
+      boolean numCheck = true;
+      for (int dieRoll : output){
+         if (dieRoll > 6 || dieRoll < 1) numCheck = false;
+
+      }
+      assertTrue(numCheck);
+   }
+   @Test public void testRollProbability() {
+      int [] output = Library.roll(6000);
+      HashMap<Integer, Integer> diceCounts = new HashMap<>();
+      for (int i = 1; i < 7; i++) {
+         diceCounts.put(i, 0);
+      }
+      for (int roll : output) {
+         int  currCount = diceCounts.get(roll);
+         currCount++;
+         diceCounts.put(roll, currCount);
+      }
+      boolean checksOut = true;
+      for (int i = 1; i < 7; i++) {
+         int count = diceCounts.get(i);
+         if (count > 1100 || count < 900) checksOut = false;
+
+      }
+      assertTrue(checksOut);
+   }
+
+
+
    @Test public void testContainsDuplicate (){
 
    }
