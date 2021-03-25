@@ -16,6 +16,10 @@ int [] rollArray = new int[n];
     }
     return rollArray;
 }
+
+public static boolean containsDuplicates (int [] array){
+
+}
 // calculate the average of an array
 public static float calculatingAverages (int[] inputArray){
     int sum = 0;
@@ -30,7 +34,7 @@ public static float calculatingAverages (int[] inputArray){
 public static int [] arrayOfArrays (int [][] inputArray){
     int outputArray[] = new int[inputArray[0].length];
     float averagedArray [] = new float[inputArray.length];
-System.out.println(inputArray.length);
+    System.out.println(inputArray.length);
     for (int i = 0; i < inputArray.length; i++) {
         averagedArray[i] = calculatingAverages(inputArray[i]);
     }
