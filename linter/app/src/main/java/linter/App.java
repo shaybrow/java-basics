@@ -36,6 +36,7 @@ public class App {
         int counter = 0;
         int linescorrect = 0;
         ArrayList<Integer> linesWrong = new ArrayList<>();
+//        iterate through the file
         while (jsScan.hasNext()) {
             String currentLine = jsScan.nextLine();
             counter++;
@@ -97,5 +98,8 @@ public class App {
         }
         System.out.println(output);
         return output;
+    }
+    public static String tally (ArrayList<String> inputList){
+
     }
 }
