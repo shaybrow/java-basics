@@ -5,19 +5,18 @@ import java.util.List;
 // I worked with Stephen Webber on this project
 
 
-public class Restaurant {
+public class Restaurant extends ReviewNormalization implements Reviewable{
     String name;
-    Integer stars;
     int price;
-    List reviewList;
-    ArrayList  <Integer> starList;
+    Integer stars;
+    List reviewList = new ArrayList();
+    ArrayList  <Integer> starList = new ArrayList();
 //    Constructor
     public Restaurant(String name, Integer stars, int price) {
         this.name = name;
         this.stars = stars;
         this.price = price;
-        this.reviewList = new ArrayList();
-        this.starList  = new ArrayList();
+
 //        this assumes rest only has one review otherwise we'd take in a list
         starList.add(stars);
 
@@ -25,18 +24,20 @@ public class Restaurant {
     public String toString(){
         return String.format("%s is a %d star restaurant with a price rating of %d", name, stars, price);
     }
+    @Override
     public void addReview(String body, String author, Integer stars){
-        reviewList.add(new Review(body, author, stars, this));
+        reviewList.add(new Review(body, author, stars));
         starList.add(stars);
-        calcStarRating(this.starList);
-//        call
+        calcStarRating();
+//        call calcStarRating at the end of each review being added to make sure stars are up to date
     }
-    public void calcStarRating (ArrayList starList){
+    @Override
+    public void calcStarRating (){
         Integer sum = 0;
         Integer count = 0;
 //        System.out.println(starList.size());
-        while ( count < starList.size()) {
-            Integer temp = (Integer) starList.get(count);
+        while ( count < this.starList.size()) {
+            Integer temp = (Integer) this.starList.get(count);
 //            System.out.println(temp);
             sum += temp;
             count++;
