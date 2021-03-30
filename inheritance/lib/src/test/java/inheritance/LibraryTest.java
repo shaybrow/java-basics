@@ -41,8 +41,8 @@ public class LibraryTest {
     @Test public void testShopToString(){
         Shop test1 = new Shop("testShop1", "Big long description asalsadsnmgs", 3);
         Shop test2 = new Shop("test2Shop", "Big long description asalsadsnmgsxfdfsdxfcv", 2);
-        String expectOut1 = "testShop1 is a 0 star shop with a price rating of 3. Description: Big long description asalsadsnmgs";
-        String expectOut2 = "test2Shop is a 0 star shop with a price rating of 2. Description: Big long description asalsadsnmgsxfdfsdxfcv";
+        String expectOut1 = "testShop1 is a null star shop with a price rating of 3. Description: Big long description asalsadsnmgs";
+        String expectOut2 = "test2Shop is a null star shop with a price rating of 2. Description: Big long description asalsadsnmgsxfdfsdxfcv";
         assertEquals(expectOut1, test1.toString());
         assertEquals(expectOut2, test2.toString());
     }
