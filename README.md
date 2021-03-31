@@ -54,9 +54,12 @@ Take in a 2d array. Use a hashset to generate a unique list of weather data from
 
 #### LintJS
 
-Take in a string file path. Review the document to determine which lines are incorrectly missing semicolons and return those line numbers in a string. 
-
+Take in a string file path. Review the document to determine which lines are incorrectly missing semicolons and return those line numbers in a string.
 
 ### Inheritance
 
 Create a class to represent a restaurant, a review and make each review attach to a resaurant and affect it's rating. To test the code, run the tests in test/java/inheritance/LibraryTest
+
+### Inheritance Day 2
+
+Create an interface to implement on reviewable classes. Create a shop and theater class that are reviewable and have toString methods. Create add movie and remove movie methods and add the option to review movies.
